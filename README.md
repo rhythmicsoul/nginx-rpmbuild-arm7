@@ -3,6 +3,7 @@ rpmbuild for nginx 1.14.0 on arm7 architecture
 
 ## Start the build by executing the following command
 `cd SPECS`
+
 `rpmbuild -ba nginx-1.14.0.spec`
 
 The rpm is already generated for arm7 architecture (centos7).
