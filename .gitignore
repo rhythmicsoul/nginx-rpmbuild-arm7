@@ -1,3 +1,4 @@
 SOURCES/nginx-1.14.0.tar.gz
+SOURCES/nginx-rtmp-modul
 BUILDROOT/*
 BUILD/*

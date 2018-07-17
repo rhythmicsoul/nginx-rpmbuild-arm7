@@ -8,6 +8,7 @@ License:	GPL
 URL:		http://nginx.org/download/%{name}-%{version}.tar.gz
 Source0:	http://nginx.org/download/%{name}-%{version}.tar.gz
 Source1:	nginx.service
+Source2:	nginx-rtmp-module
 
 BuildRequires:	perl-ExtUtils-Embed,systemd
 Requires:	openssl, perl-ExtUtils-Embed
@@ -22,7 +23,7 @@ Nginx Webserver
 
 
 %build
-./configure --prefix="/usr/local/nginx" --sbin-path="/usr/sbin/nginx" --conf-path="/etc/nginx/nginx.conf" --pid-path="/var/run/nginx.pid" --lock-path="/var/run/nginx.lock" --user="nginx" --group="nginx" --with-threads --with-file-aio --with-http_ssl_module --with-http_v2_module --with-http_gzip_static_module --with-http_gunzip_module --with-http_auth_request_module --with-http_perl_module=dynamic --http-log-path="/var/log/nginx/access.log" --with-pcre --error-log-path="/var/log/nginx/error.log"
+./configure --prefix="/usr/local/nginx" --sbin-path="/usr/sbin/nginx" --conf-path="/etc/nginx/nginx.conf" --pid-path="/var/run/nginx.pid" --lock-path="/var/run/nginx.lock" --user="nginx" --group="nginx" --with-threads --with-file-aio --with-http_ssl_module --with-http_v2_module --with-http_gzip_static_module --with-http_gunzip_module --with-http_auth_request_module --with-http_perl_module=dynamic --http-log-path="/var/log/nginx/access.log" --with-pcre --error-log-path="/var/log/nginx/error.log" --add-module=%SOURCE2
 make -j4
 
 
